@@ -13,12 +13,11 @@ checkstyle {
 }
 
 application {
-    mainModule = "cs3500.pa05"
-    mainClass = "cs3500.pa05.Driver"
+    mainModule = 'cs3500.pa05'
+    mainClass = 'cs3500.pa05.Driver'
 }
 
-//Jacoco for code coverage
-
+// JaCoCo for code coverage
 test {
     finalizedBy jacocoTestReport // generate report after code coverage test
 }
@@ -50,14 +49,19 @@ dependencies {
     // Jackson
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.1'
 
+    // JavaFX
+    implementation('org.controlsfx:controlsfx:11.1.2')
+
     // JUnit
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
-    // JavaFX
-    implementation('org.controlsfx:controlsfx:11.1.2')
+    // TestFX
+    testImplementation 'org.testfx:testfx-core:4.0.16-alpha'
+    testImplementation 'org.testfx:testfx-junit5:4.0.16-alpha'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.13.2'
 
-    //https://github.com/webcompere/system-stubs
+    // https://github.com/webcompere/system-stubs
     testImplementation group: 'org.mockito', name: 'mockito-inline', version: '3.12.4'
     testImplementation group: 'uk.org.webcompere', name: 'system-stubs-jupiter', version: '2.0.2'
 }
